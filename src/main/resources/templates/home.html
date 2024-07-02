@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<title>margin-left</title>
+<style>
+    .layer1 {
+        margin-left: 20%
+    }
+
+    input.text {
+        width: 200px;
+        height: 15px;
+        padding: 5px 10px 5px 10px;
+        border: 1px solid #999;
+        font-size: 16px;
+    }
+</style>
+
+<div class="layer1">
+    <h2>Ввод данных</h2>
+    <p>Введите числа через пробел, используя "." для нецелых значений</p>
+    <form action="/" method="post">
+        <p>
+            <input type="checkbox" name="des_sort">
+            <label>Сортировать по убыванию</label>
+        </p>
+        <input type="text" class="text" name="data">
+        <button type="submit">Сортировать</button>
+        <div th:each="el : ${sorted_data_output}">
+            <p th:text="${el}"/>
+        </div>
+    </form>
+</div>
+</html>

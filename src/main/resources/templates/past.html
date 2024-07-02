@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Past sort</title>
+</head>
+
+<body>
+<form action = "/past" method="post">
+    <div th:each="el : ${past_data_output}">
+        <p th:text="${el}" />
+    </div>
+</form>
+</body>
+</html>
